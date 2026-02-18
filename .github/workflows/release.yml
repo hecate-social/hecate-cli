@@ -1,0 +1,35 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify script syntax
+        run: bash -n scripts/hecate.sh
+
+      - name: Prepare release artifact
+        run: |
+          mkdir -p dist
+          cp scripts/hecate.sh dist/hecate
+          cp plugins/registry.json dist/registry.json
+          chmod +x dist/hecate
+          tar -czf dist/hecate-cli-${GITHUB_REF_NAME}.tar.gz -C dist hecate registry.json
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            dist/hecate-cli-${{ github.ref_name }}.tar.gz
+            dist/hecate
+            dist/registry.json
+          generate_release_notes: true

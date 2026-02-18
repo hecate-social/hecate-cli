@@ -1,0 +1,26 @@
+{
+  "trader": {
+    "description": "Trading agent",
+    "files": [
+      "hecate-traderd.container",
+      "hecate-traderd.env",
+      "hecate-traderw.container"
+    ],
+    "data_dirs": [
+      "hecate-traderd"
+    ],
+    "frontend_port": 5174
+  },
+  "martha": {
+    "description": "AI agent",
+    "files": [
+      "hecate-marthad.container",
+      "hecate-marthad.env",
+      "hecate-marthaw.container"
+    ],
+    "data_dirs": [
+      "hecate-marthad"
+    ],
+    "frontend_port": 5175
+  }
+}
