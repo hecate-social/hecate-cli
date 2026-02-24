@@ -11,7 +11,7 @@ and manages services through systemd.
 
 ## Installation
 
-### Via hecate-node installer (recommended)
+### Via hecate-install installer (recommended)
 
 ```bash
 curl -sL https://install.hecate.social | bash
