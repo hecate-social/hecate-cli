@@ -23,8 +23,8 @@ The installer downloads the CLI automatically.
 
 ```bash
 # Download latest release
-curl -sLO https://github.com/hecate-social/hecate-cli/releases/latest/download/hecate
-curl -sLO https://github.com/hecate-social/hecate-cli/releases/latest/download/registry.json
+curl -sLO https://codeberg.org/hecate-social/hecate-cli/releases/latest/download/hecate
+curl -sLO https://codeberg.org/hecate-social/hecate-cli/releases/latest/download/registry.json
 
 # Install
 chmod +x hecate
@@ -125,7 +125,7 @@ The `plugins/registry.json` file describes known plugins:
 | Variable | Default | Description |
 |----------|---------|-------------|
 | `HECATE_DIR` | `~/.hecate` | Base data directory |
-| `HECATE_GITOPS_REPO` | `https://github.com/hecate-social/hecate-gitops.git` | GitOps repository URL |
+| `HECATE_GITOPS_REPO` | `https://codeberg.org/hecate-social/hecate-gitops.git` | GitOps repository URL |
 | `HECATE_REGISTRY` | `<cli-dir>/plugins/registry.json` | Plugin registry file path |
 
 ## Dependencies
